@@ -12,9 +12,35 @@ namespace TheBestGame
 {
     public partial class Form1 : Form
     {
+        Weapon test_weapon;
         public Form1()
         {
             InitializeComponent();
+            test_weapon = new Weapon();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Damage dmg = test_weapon.GetDamage();
+            LogDamage(dmg);
+        }
+
+        private void LogDamage(Damage damage)
+        {
+            int dmg = damage.GetResultDamage();
+            bool crit = damage.GetCrit();
+            string record = dmg.ToString();
+            if(crit)
+            {
+                record += "  крит!";
+            }
+            record += "\r\n";
+            textBox1.Text = textBox1.Text + record;
+        }
+
+        private void InitializePanel(Weapon weapon)
+        {
+
         }
     }
 }

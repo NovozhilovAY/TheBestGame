@@ -7,14 +7,22 @@ using System.Threading.Tasks;
 
 namespace TheBestGame
 {
-    struct Damage
+    class Damage
     {
-        readonly int result_damage;
-        readonly bool is_crit;
-        public Damage(int _result_damage, bool _is_crit)
+        private int result_damage;
+        private bool crit;
+        public Damage(int _result_damage, bool _crit)
         {
             result_damage = _result_damage;
-            is_crit = _is_crit;
+            crit = _crit;
+        }
+        public int GetResultDamage()
+        {
+            return result_damage;
+        }
+        public bool GetCrit()
+        {
+            return crit;
         }
     }
 
