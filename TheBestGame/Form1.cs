@@ -17,6 +17,7 @@ namespace TheBestGame
         {
             InitializeComponent();
             test_weapon = new Weapon();
+            InitializeWeaponPanel(test_weapon);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,9 +39,12 @@ namespace TheBestGame
             textBox1.Text = textBox1.Text + record;
         }
 
-        private void InitializePanel(Weapon weapon)
+        private void InitializeWeaponPanel(Weapon weapon)
         {
-
-        }
+            label1.Text = "Название: " + weapon.GetName();
+            label2.Text = "Урон: " + weapon.GetMinDamage().ToString() + " - " + weapon.GetMaxDamage().ToString();
+            label3.Text = "Шанс крита: " + weapon.GetCritChance().ToString() + "%";
+            label4.Text = "Множитель крита: " + weapon.GetCritMultiplier().ToString();
+        }   
     }
 }
