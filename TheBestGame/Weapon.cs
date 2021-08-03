@@ -36,6 +36,8 @@ namespace TheBestGame
         private int crit_damage_chance;
         private double crit_damage_multiplier = 2;
 
+        Random rnd = new Random();
+
         public Weapon()
         {
             name = "test sword";
@@ -54,6 +56,31 @@ namespace TheBestGame
             crit_damage_chance = _crit_damage_chance;
         }
 
+        public string GetName()
+        {
+            return name;
+        }
+
+        public int GetMinDamage()
+        {
+            return min_damage;
+        }
+
+        public int GetMaxDamage()
+        {
+            return max_damage;
+        }
+
+        public int GetCritChance()
+        {
+            return crit_damage_chance;
+        }
+
+        public double GetCritMultiplier()
+        {
+            return crit_damage_multiplier;
+        }
+
         public Damage GetDamage()
         {
             int damage = GetNumberFromInterval(min_damage, max_damage);
@@ -64,14 +91,13 @@ namespace TheBestGame
 
         private int GetNumberFromInterval(int min, int max)
         {
-            Random rnd = new Random();
-            return rnd.Next(min, max);
+            return rnd.Next(min, max + 1);
         }
 
         private bool IsCrit(int crit_chance)
         {
-            Random rnd = new Random();
-            int rnd_num = rnd.Next(100);
+            
+            int rnd_num = rnd.Next(100 + 1);
             if(rnd_num <= crit_chance)
             {
                 return true;
