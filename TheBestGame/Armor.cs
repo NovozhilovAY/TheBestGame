@@ -14,6 +14,7 @@ namespace TheBestGame
         //private Bitmap skin;
         private string name;
         private int defense;
+        private int price;
 
         public Armor()
         {
@@ -42,6 +43,15 @@ namespace TheBestGame
         public void SetDefense(int _defense)
         {
             defense = _defense;
+        }
+
+        public int GetPrice()
+        {
+            return price;
+        }
+        public void SetPrice(int _price)
+        {
+            price = _price;
         }
     }
 
