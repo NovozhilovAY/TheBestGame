@@ -29,6 +29,13 @@ namespace TheBestGame
         private void button1_Click(object sender, EventArgs e)
         {
             Damage dmg = test_weapon.GetDamage();
+            //var a = test_weapon.GetType();
+            //var aa = test_helmet.GetType();
+            //Armor ass = new Helmet();
+            //var s = a.Name;
+            //var ss = aa.Name;
+            //var assss = ass.GetType();
+
             LogDamage(dmg);
         }
 
