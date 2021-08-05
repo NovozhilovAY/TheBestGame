@@ -30,12 +30,13 @@ namespace TheBestGame
         }
 
         public Сharacter(int _level,
-                         int _health_points, 
+                         int _health_points,
                          Weapon _weapon,
                          Helmet _helmet,
                          Torso _torso,
                          Leggings _leggings,
-                         Shield _shield)
+                         Shield _shield
+                         )
         {
             level = _level;
             health_points = _health_points;
