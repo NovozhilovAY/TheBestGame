@@ -28,10 +28,6 @@ namespace TheBestGame
             test_torso = new Torso();
             test_leggings = new Leggings();
             InitializeWeaponPanel(test_weapon);
-
-            weapon1 = new Weapon("Cac", 100, 120, 50);
-            InitializeWeaponPanel(weapon1);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,9 +40,6 @@ namespace TheBestGame
             //var s = a.Name;
             //var ss = aa.Name;
             //var assss = ass.GetType();
-
-
-            Damage dmg = weapon1.GetDamage();
 
             LogDamage(dmg);
         }

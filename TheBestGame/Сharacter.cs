@@ -27,19 +27,19 @@ namespace TheBestGame
             CalculateDefense();
         }
 
-        public Character(int _level,
+        public Сharacter(int _level,
                          int _health_points, 
                          Weapon _weapon,
                          Helmet _helmet,
                          Torso _torso,
-                         Leggins _leggins)
+                         Leggings _leggings)
         {
             level = _level;
             health_points = _health_points;
             weapon = _weapon;
             helmet = _helmet;
             torso = _torso;
-            leggings = _leggins;
+            leggings = _leggings;
             CalculateDefense();
         }
 
@@ -58,7 +58,7 @@ namespace TheBestGame
             return weapon;
         }
 
-        public Helment GetHelment()
+        public Helmet GetHelment()
         {
             return helmet;
         }
@@ -103,7 +103,7 @@ namespace TheBestGame
             torso = _torso;
         }
 
-        public void SetLeggins(Leggins _leggins)
+        public void SetLeggins(Leggings _leggings)
         {
             leggings = _leggings;
         }
