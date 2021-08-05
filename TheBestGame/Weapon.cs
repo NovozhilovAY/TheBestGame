@@ -35,6 +35,7 @@ namespace TheBestGame
         private int max_damage;
         private int crit_damage_chance;
         private double crit_damage_multiplier = 2;
+        private int price;
 
         Random rnd = new Random();
 
@@ -80,7 +81,14 @@ namespace TheBestGame
         {
             return crit_damage_multiplier;
         }
-
+        public int GetPrice()
+        {
+            return price;
+        }
+        public void SetPrice(int _price)
+        {
+            price = _price;
+        }
         public Damage GetDamage()
         {
             int damage = GetNumberFromInterval(min_damage, max_damage);
