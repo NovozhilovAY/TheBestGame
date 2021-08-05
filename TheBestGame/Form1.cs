@@ -13,16 +13,18 @@ namespace TheBestGame
     public partial class Form1 : Form
     {
         Weapon test_weapon;
+        Weapon weapon1;
         public Form1()
         {
             InitializeComponent();
             test_weapon = new Weapon();
-            InitializeWeaponPanel(test_weapon);
+            weapon1 = new Weapon("Cac", 100, 120, 50);
+            InitializeWeaponPanel(weapon1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Damage dmg = test_weapon.GetDamage();
+            Damage dmg = weapon1.GetDamage();
             LogDamage(dmg);
         }
 
