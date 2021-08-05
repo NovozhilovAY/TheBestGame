@@ -13,16 +13,29 @@ namespace TheBestGame
     public partial class Form1 : Form
     {
         Weapon test_weapon;
+        Helmet test_helmet;
+        Torso test_torso;
+        Leggings test_leggings;
         public Form1()
         {
             InitializeComponent();
             test_weapon = new Weapon();
+            test_helmet = new Helmet();
+            test_torso = new Torso();
+            test_leggings = new Leggings();
             InitializeWeaponPanel(test_weapon);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Damage dmg = test_weapon.GetDamage();
+            //var a = test_weapon.GetType();
+            //var aa = test_helmet.GetType();
+            //Armor ass = new Helmet();
+            //var s = a.Name;
+            //var ss = aa.Name;
+            //var assss = ass.GetType();
+
             LogDamage(dmg);
         }
 
