@@ -9,38 +9,26 @@ namespace TheBestGame
 {
     class Inventory
     {
-        List<Armor> armors;
-        List<Weapon> weapons;
+        List<Item> items;
 
         public Inventory()
         {
-            armors = new List<Armor>();
-            weapons = new List<Weapon>();
-        }
-        public List<Armor> GetArmor()
-        {
-            return armors;
-        }
-        public List<Weapon> GetWeapon()
-        {
-            return weapons;
+            items = new List<Item>();
         }
 
-        public void AddToArmor(Armor _armor)
+        public List<Item> GetItems()
         {
-            armors.Add(_armor);
+            return items;
         }
-        public void AddToWeapon(Weapon _weapon)
+
+        public void AddItem(Item _item)
         {
-            weapons.Add(_weapon);
+            items.Add(_item);
         }
-        public void RemoveFromArmor(Armor _armor)
+
+        public void RemoveItem(Item _item)
         {
-            armors.Remove(_armor);
-        }
-        public void RemoveFromWeapon(Weapon _weapon)
-        {
-            weapons.Remove(_weapon);
+            items.Remove(_item);
         }
     }
 }

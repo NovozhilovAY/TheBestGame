@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //test
 namespace TheBestGame
 {
-    class Armor
+    class Armor : Item
     {
         //private int id;
         //private Bitmap skin;

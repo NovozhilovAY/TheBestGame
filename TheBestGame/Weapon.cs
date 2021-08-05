@@ -26,10 +26,10 @@ namespace TheBestGame
         }
     }
 
-    class Weapon
+    class Weapon : Item
     {
-        //private int id;
-        //private Bitmap skin;
+        private int id;
+        private Bitmap skin;
         private string name;
         private int min_damage;
         private int max_damage;
@@ -46,9 +46,9 @@ namespace TheBestGame
             max_damage = 20;
             crit_damage_chance = 20;
         }
-        public Weapon(string _name, 
-                      int _min_damage, 
-                      int _max_damage, 
+        public Weapon(string _name,
+                      int _min_damage,
+                      int _max_damage,
                       int _crit_damage_chance)
         {
             name = _name;
@@ -93,7 +93,7 @@ namespace TheBestGame
         {
             int damage = GetNumberFromInterval(min_damage, max_damage);
             bool crit = IsCrit(crit_damage_chance);
-            int result_damage = CalculateResultDamage(damage,crit,crit_damage_multiplier);
+            int result_damage = CalculateResultDamage(damage, crit, crit_damage_multiplier);
             return new Damage(result_damage, crit);
         }
 
@@ -104,9 +104,9 @@ namespace TheBestGame
 
         private bool IsCrit(int crit_chance)
         {
-            
+
             int rnd_num = rnd.Next(100 + 1);
-            if(rnd_num <= crit_chance)
+            if (rnd_num <= crit_chance)
             {
                 return true;
             }
@@ -118,7 +118,7 @@ namespace TheBestGame
 
         private int CalculateResultDamage(int damage, bool crit, double crit_multiplier)
         {
-            if(crit)
+            if (crit)
             {
                 double result_damage = damage * crit_multiplier;
                 return (int)result_damage;

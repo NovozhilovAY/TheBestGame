@@ -14,6 +14,7 @@ namespace TheBestGame
         private Helmet helmet;
         private Torso torso;
         private Leggings leggings;
+        private Shield shield;
         private int defense;
 
         public Сharacter()
@@ -24,15 +25,20 @@ namespace TheBestGame
             helmet = new Helmet();
             torso = new Torso();
             leggings = new Leggings();
+            shield = new Shield();
             CalculateDefense();
         }
 
         public Сharacter(int _level,
-                         int _health_points, 
+
+                         int _health_points,
                          Weapon _weapon,
                          Helmet _helmet,
                          Torso _torso,
-                         Leggings _leggings)
+                         Leggings _leggings,
+                         Shield _shield
+                         )
+
         {
             level = _level;
             health_points = _health_points;
@@ -40,6 +46,8 @@ namespace TheBestGame
             helmet = _helmet;
             torso = _torso;
             leggings = _leggings;
+            shield = _shield;
+
             CalculateDefense();
         }
 
@@ -78,6 +86,11 @@ namespace TheBestGame
             return defense;
         }
 
+        public Shield GetShield()
+        {
+            return shield;
+        }
+
         public void SetLevel(int _level)
         {
             level = _level;
@@ -106,6 +119,11 @@ namespace TheBestGame
         public void SetLeggins(Leggings _leggings)
         {
             leggings = _leggings;
+        }
+
+        public void SetShield(Shield _shield)
+        {
+            shield = _shield;
         }
 
         private void CalculateDefense()
