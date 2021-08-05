@@ -13,10 +13,16 @@ namespace TheBestGame
     public partial class Form1 : Form
     {
         Weapon test_weapon;
+        Helmet test_helmet;
+        Torso test_torso;
+        Leggings test_leggings;
         public Form1()
         {
             InitializeComponent();
             test_weapon = new Weapon();
+            test_helmet = new Helmet();
+            test_torso = new Torso();
+            test_leggings = new Leggings();
             InitializeWeaponPanel(test_weapon);
         }
 

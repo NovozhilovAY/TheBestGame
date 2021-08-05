@@ -47,14 +47,20 @@ namespace TheBestGame
 
     class Helmet : Armor
     {
+        public Helmet() : base(){}
+        public Helmet(string _name, int _defense) : base(_name, _defense) { }
+
 
     }
     class Torso : Armor
     {
+        public Torso() : base() { }
+        public Torso(string _name, int _defense) : base(_name, _defense) { }
 
     }
     class Leggings : Armor
     {
-
+        public Leggings() : base() { }
+        public Leggings(string _name, int _defense) : base(_name, _defense) { }
     }
 }
