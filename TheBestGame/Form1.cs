@@ -45,9 +45,6 @@ namespace TheBestGame
             //var ss = aa.Name;
             //var assss = ass.GetType();
 
-
-            Damage dmg = weapon1.GetDamage();
-
             LogDamage(dmg);
         }
 
