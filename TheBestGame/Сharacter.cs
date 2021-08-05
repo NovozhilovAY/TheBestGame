@@ -30,6 +30,7 @@ namespace TheBestGame
         }
 
         public Сharacter(int _level,
+
                          int _health_points,
                          Weapon _weapon,
                          Helmet _helmet,
@@ -37,6 +38,7 @@ namespace TheBestGame
                          Leggings _leggings,
                          Shield _shield
                          )
+
         {
             level = _level;
             health_points = _health_points;
@@ -45,6 +47,7 @@ namespace TheBestGame
             torso = _torso;
             leggings = _leggings;
             shield = _shield;
+
             CalculateDefense();
         }
 
