@@ -16,13 +16,13 @@ namespace TheBestGame
             result_damage = _result_damage;
             crit = _crit;
         }
-        public int GetResultDamage()
+        public int Result_damage
         {
-            return result_damage;
+            get { return result_damage; }
         }
-        public bool GetCrit()
+        public bool Crit
         {
-            return crit;
+            get { return crit; }
         }
     }
 
