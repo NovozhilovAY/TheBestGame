@@ -41,54 +41,59 @@ namespace TheBestGame
 
         public Weapon()
         {
+            id = 1;
             name = "test sword";
             min_damage = 10;
             max_damage = 20;
             crit_damage_chance = 20;
         }
-        public Weapon(string _name,
+        public Weapon(int _id,
+                      string _name,
                       int _min_damage,
                       int _max_damage,
                       int _crit_damage_chance)
         {
+            id = _id;
             name = _name;
             min_damage = _min_damage;
             max_damage = _max_damage;
             crit_damage_chance = _crit_damage_chance;
         }
 
-        public string GetName()
+        public int Id
         {
-            return name;
+            get { return id; }
+        }
+        public string Name
+        {
+            get { return name; }
         }
 
-        public int GetMinDamage()
+        public int MinDamage
         {
-            return min_damage;
+            get { return min_damage; }
         }
 
-        public int GetMaxDamage()
+        public int MaxDamage
         {
-            return max_damage;
+            get { return max_damage; }
         }
 
-        public int GetCritChance()
+        public int CritChance
         {
-            return crit_damage_chance;
+            get { return crit_damage_chance; }
         }
 
-        public double GetCritMultiplier()
+        public double CritMultiplier
         {
-            return crit_damage_multiplier;
+            get { return crit_damage_multiplier; }
         }
-        public int GetPrice()
+        public int Price
         {
-            return price;
+            get { return price; }
+            set { price = value; }
         }
-        public void SetPrice(int _price)
-        {
-            price = _price;
-        }
+        
         public Damage GetDamage()
         {
             int damage = GetNumberFromInterval(min_damage, max_damage);
