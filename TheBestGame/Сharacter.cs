@@ -51,79 +51,51 @@ namespace TheBestGame
             CalculateDefense();
         }
 
-        public int GetLevel()
+        public int Level
         {
-            return level;
+            get { return level; }
+            set { level = value; }
         }
 
-        public int GetHealthPoints()
+        public int HealthPoints
         {
-            return health_points;
+            get { return health_points; }
+            set { health_points = value; }
         }
 
-        public Weapon GetWeapon()
+        public Weapon Weapon
         {
-            return weapon;
+            get { return weapon; }
+            set { weapon = value; }
         }
 
-        public Helmet GetHelment()
+        public Helmet Helment
         {
-            return helmet;
+            get { return helmet; }
+            set { helmet = value; }
         }
 
-        public Torso GetTorso()
+        public Torso Torso
         {
-            return torso;
+            get{ return torso; }
+            set { torso = value; }
         }
 
-        public Leggings GetLeggings()
+        public Leggings Leggings
         {
-            return leggings;
+            get{ return leggings; }
+            set{ leggings = value; }
         }
 
-        public int GetDefense()
+        public int Defense
         {
-            return defense;
+            get { return defense; }
         }
 
-        public Shield GetShield()
+        public Shield Shield
         {
-            return shield;
-        }
-
-        public void SetLevel(int _level)
-        {
-            level = _level;
-        }
-
-        public void SetHealthPoints(int _health_points)
-        {
-            health_points = _health_points;
-        }
-
-        public void SetWeapon(Weapon _weapon)
-        {
-            weapon = _weapon;
-        }
-
-        public void SetHelmet(Helmet _helmet)
-        {
-            helmet = _helmet;
-        }
-
-        public void SetTorso(Torso _torso)
-        {
-            torso = _torso;
-        }
-
-        public void SetLeggins(Leggings _leggings)
-        {
-            leggings = _leggings;
-        }
-
-        public void SetShield(Shield _shield)
-        {
-            shield = _shield;
+            get{ return shield; }
+            set { shield = value; }
         }
 
         private void CalculateDefense()

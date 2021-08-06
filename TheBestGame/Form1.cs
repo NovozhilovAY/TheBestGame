@@ -29,7 +29,7 @@ namespace TheBestGame
             test_leggings = new Leggings();
             InitializeWeaponPanel(test_weapon);
 
-            weapon1 = new Weapon("Cac", 100, 120, 50);
+            weapon1 = new Weapon(1,"Cac", 100, 120, 50);
             InitializeWeaponPanel(weapon1);
             Inventory inventory = new Inventory();
             inventory.AddItem(weapon1);
@@ -41,7 +41,7 @@ namespace TheBestGame
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Damage dmg = test_weapon.GetDamage();
+            Damage dmg = weapon1.GetDamage();
             //var a = test_weapon.GetType();
             //var aa = test_helmet.GetType();
             //Armor ass = new Helmet();
@@ -55,8 +55,8 @@ namespace TheBestGame
 
         private void LogDamage(Damage damage)
         {
-            int dmg = damage.GetResultDamage();
-            bool crit = damage.GetCrit();
+            int dmg = damage.Result_damage;
+            bool crit = damage.Crit;
             string record = dmg.ToString();
             if(crit)
             {
@@ -68,10 +68,10 @@ namespace TheBestGame
 
         private void InitializeWeaponPanel(Weapon weapon)
         {
-            label1.Text = "Название: " + weapon.GetName();
-            label2.Text = "Урон: " + weapon.GetMinDamage().ToString() + " - " + weapon.GetMaxDamage().ToString();
-            label3.Text = "Шанс крита: " + weapon.GetCritChance().ToString() + "%";
-            label4.Text = "Множитель крита: " + weapon.GetCritMultiplier().ToString();
+            label1.Text = "Название: " + weapon.Name;
+            label2.Text = "Урон: " + weapon.MinDamage.ToString() + " - " + weapon.MaxDamage.ToString();
+            label3.Text = "Шанс крита: " + weapon.CritChance.ToString() + "%";
+            label4.Text = "Множитель крита: " + weapon.CritMultiplier.ToString();
         }   
     }
 }
