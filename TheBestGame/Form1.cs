@@ -12,66 +12,70 @@ namespace TheBestGame
 {
     public partial class Form1 : Form
     {
-        Weapon test_weapon;
-
-        Helmet test_helmet;
-        Torso test_torso;
-        Leggings test_leggings;
-        Weapon weapon1;
-
+        private Player player;
         public Form1()
         {
             InitializeComponent();
-            test_weapon = new Weapon();
-
-            test_helmet = new Helmet();
-            test_torso = new Torso();
-            test_leggings = new Leggings();
-            InitializeWeaponPanel(test_weapon);
-
-            weapon1 = new Weapon(1,"Cac", 100, 120, 50);
-            InitializeWeaponPanel(weapon1);
-            Inventory inventory = new Inventory();
-            inventory.AddItem(weapon1);
-            inventory.AddItem(test_torso);
-            inventory.AddItem(test_leggings);
-
+            InitializePlayer();
+            InitializeGUI();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void InitializePlayer()
         {
-
-            Damage dmg = weapon1.GetDamage();
-            //var a = test_weapon.GetType();
-            //var aa = test_helmet.GetType();
-            //Armor ass = new Helmet();
-            //var s = a.Name;
-            //var ss = aa.Name;
-            //var assss = ass.GetType();
-
-
-            LogDamage(dmg);
+            Weapon weapon = new Weapon(1, "King sword", 30, 40, 15);
+            Helmet helmet = new Helmet("King helmet", 15);
+            Torso torso = new Torso("King cuirass", 30);
+            Leggings leggings = new Leggings("King boots", 10);
+            Shield shield = new Shield("King shield");
+            Сharacter character = new Сharacter(1, 200, weapon, helmet, torso, leggings, shield);
+            player = new Player("test", "test", "BossOfThisKingdom", character, new Inventory(), 1000, 0, 10, 10);
         }
 
-        private void LogDamage(Damage damage)
+
+        //private void LogDamage(Damage damage)
+        //{
+        //    int dmg = damage.Result_damage;
+        //    bool crit = damage.Crit;
+        //    string record = dmg.ToString();
+        //    if(crit)
+        //    {
+        //        record += "  крит!";
+        //    }
+        //    record += "\r\n";
+        //    textBox1.Text = textBox1.Text + record;
+        //}
+        private void InitializeGUI()
         {
-            int dmg = damage.Result_damage;
-            bool crit = damage.Crit;
-            string record = dmg.ToString();
-            if(crit)
-            {
-                record += "  крит!";
-            }
-            record += "\r\n";
-            textBox1.Text = textBox1.Text + record;
+            InitializeWeaponPanel(player.Сharacter.Weapon);
+            InitializeArmorPanel(player.Сharacter.Helment, HelmetNameLabel, HelmetDefenseLabel);
+            InitializeArmorPanel(player.Сharacter.Torso, TorsoNameLabel, TorsoDefenceLabel);
+            InitializeArmorPanel(player.Сharacter.Leggings, LeggingsNameLabel, LeggingsDefenseLabel);
+            InitializeShieldPanel(player.Сharacter.Shield);
+            NicknameLabel.Text = player.Name;
+            LevelLabel.Text = "Уровень: " + player.Сharacter.Level.ToString();
+            GoldLabel.Text = "Золото: " + player.Gold;
+            DonateGoldLabel.Text = "Изумруды: " + player.Donate_gold;
+            HPLabel.Text = "HP " + player.Сharacter.HealthPoints.ToString() + " / " + player.Сharacter.HealthPoints.ToString();
+            XPLabel.Text = "XP 0 / 1000!!!";
         }
 
         private void InitializeWeaponPanel(Weapon weapon)
         {
-            label1.Text = "Название: " + weapon.Name;
-            label2.Text = "Урон: " + weapon.MinDamage.ToString() + " - " + weapon.MaxDamage.ToString();
-            label3.Text = "Шанс крита: " + weapon.CritChance.ToString() + "%";
-            label4.Text = "Множитель крита: " + weapon.CritMultiplier.ToString();
-        }   
+            WeaponNameLabel.Text = "Название: " + weapon.Name;
+            WeaponDamageLabel.Text = "Урон: " + weapon.MinDamage.ToString() + " - " + weapon.MaxDamage.ToString();
+            WeaponCritChanceLabel.Text = "Шанс крита: " + weapon.CritChance.ToString() + "%";
+            WeaponMultLabel.Text = "Множитель крита: " + weapon.CritMultiplier.ToString();
+        }
+
+        private void InitializeArmorPanel(Armor armor, Label NameLabel, Label DefenseLabel)
+        {
+            NameLabel.Text = "Назване: " + armor.Name;
+            DefenseLabel.Text = "Защита: " + armor.Defense.ToString();
+        }
+
+        private void InitializeShieldPanel(Shield shield)
+        {
+            ShieldNameLabel.Text = "Назание: " + shield.Name;
+        }
     }
 }

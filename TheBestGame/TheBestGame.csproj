@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Armor.cs" />
+    <Compile Include="FightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FightForm.Designer.cs">
+      <DependentUpon>FightForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Shield.cs" />
     <Compile Include="Weapon.cs" />
     <Compile Include="Сharacter.cs" />
+    <EmbeddedResource Include="FightForm.resx">
+      <DependentUpon>FightForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
