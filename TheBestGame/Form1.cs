@@ -27,7 +27,7 @@ namespace TheBestGame
             Torso torso = new Torso("King cuirass", 30);
             Leggings leggings = new Leggings("King boots", 10);
             Shield shield = new Shield("King shield");
-            Сharacter character = new Сharacter(1, 200, weapon, helmet, torso, leggings, shield);
+            Character character = new Character(1, 200, weapon, helmet, torso, leggings, shield);
             player = new Player("test", "test", "BossOfThisKingdom", character, new Inventory(), 1000, 0, 10, 10);
         }
 
@@ -46,16 +46,16 @@ namespace TheBestGame
         //}
         private void InitializeGUI()
         {
-            InitializeWeaponPanel(player.Сharacter.Weapon);
-            InitializeArmorPanel(player.Сharacter.Helment, HelmetNameLabel, HelmetDefenseLabel);
-            InitializeArmorPanel(player.Сharacter.Torso, TorsoNameLabel, TorsoDefenceLabel);
-            InitializeArmorPanel(player.Сharacter.Leggings, LeggingsNameLabel, LeggingsDefenseLabel);
-            InitializeShieldPanel(player.Сharacter.Shield);
+            InitializeWeaponPanel(player.Character.Weapon);
+            InitializeArmorPanel(player.Character.Helment, HelmetNameLabel, HelmetDefenseLabel);
+            InitializeArmorPanel(player.Character.Torso, TorsoNameLabel, TorsoDefenceLabel);
+            InitializeArmorPanel(player.Character.Leggings, LeggingsNameLabel, LeggingsDefenseLabel);
+            InitializeShieldPanel(player.Character.Shield);
             NicknameLabel.Text = player.Name;
-            LevelLabel.Text = "Уровень: " + player.Сharacter.Level.ToString();
+            LevelLabel.Text = "Уровень: " + player.Character.Level.ToString();
             GoldLabel.Text = "Золото: " + player.Gold;
             DonateGoldLabel.Text = "Изумруды: " + player.Donate_gold;
-            HPLabel.Text = "HP " + player.Сharacter.HealthPoints.ToString() + " / " + player.Сharacter.HealthPoints.ToString();
+            HPLabel.Text = "HP " + player.Character.HealthPoints.ToString() + " / " + player.Character.HealthPoints.ToString();
             XPLabel.Text = "XP 0 / 1000!!!";
         }
 
@@ -76,6 +76,12 @@ namespace TheBestGame
         private void InitializeShieldPanel(Shield shield)
         {
             ShieldNameLabel.Text = "Назание: " + shield.Name;
+        }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            FightForm fightForm = new FightForm(player, player);
+            fightForm.Show();
         }
     }
 }

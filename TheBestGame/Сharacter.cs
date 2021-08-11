@@ -60,6 +60,7 @@ namespace TheBestGame
             torso = new Torso(_character.Torso);
             leggings = new Leggings(_character.Leggings);
             shield = new Shield(_character.Shield);
+            defense = _character.Defense;
         }
 
         public int Level

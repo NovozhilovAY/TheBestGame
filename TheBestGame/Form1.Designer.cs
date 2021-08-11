@@ -253,6 +253,7 @@ namespace TheBestGame
             this.PlayButton.TabIndex = 10;
             this.PlayButton.Text = "Играть";
             this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // NicknameLabel
             // 
