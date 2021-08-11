@@ -26,32 +26,22 @@ namespace TheBestGame
             name = _name;
             defense = _defense;
         }
-        public string GetName()
+        public string Name
         {
-            return name;
+            get { return name; }
+            set { name = value; }
         }
 
-        public int GetDefense()
+        public int Defense
         {
-            return defense;
-        }
-        public void SetName(string _name)
-        {
-            name = _name;
+            get { return defense; }
+            set { defense = value; }
         }
 
-        public void SetDefense(int _defense)
+        public int Price
         {
-            defense = _defense;
-        }
-
-        public int GetPrice()
-        {
-            return price;
-        }
-        public void SetPrice(int _price)
-        {
-            price = _price;
+            get { return price; }
+            set { price = value; }
         }
     }
 
