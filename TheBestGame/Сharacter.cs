@@ -100,7 +100,7 @@ namespace TheBestGame
 
         private void CalculateDefense()
         {
-            defense = helmet.GetDefense() + torso.GetDefense() + leggings.GetDefense();
+            defense = helmet.Defense + torso.Defense + leggings.Defense;
         }
     }
 }
