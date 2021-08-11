@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheBestGame
 {
-    class Player
+    public class Player
     {
         private string login;
         private string password;
