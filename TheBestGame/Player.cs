@@ -11,7 +11,7 @@ namespace TheBestGame
         private string login;
         private string password;
         private string name;
-        private Сharacter character;
+        private Character character;
         private Inventory inventory;
         private int gold;
         private int donate_gold;
@@ -23,7 +23,7 @@ namespace TheBestGame
             login = "test_login";
             password = "test_password";
             name = "Player1";
-            character = new Сharacter();
+            character = new Character();
             inventory = new Inventory();
             gold = 1000;
             donate_gold = 0;
@@ -33,7 +33,7 @@ namespace TheBestGame
         public Player(string _login, 
                       string _password, 
                       string _name, 
-                      Сharacter _character, 
+                      Character _character, 
                       Inventory _inventory, 
                       int _gold, 
                       int _donate_gold, 
@@ -66,7 +66,7 @@ namespace TheBestGame
             get { return name; }
         }
 
-        public Сharacter Сharacter
+        public Character Character
         {
             get { return character; }
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //test
 namespace TheBestGame
 {
-    class Armor : Item
+    public class Armor : Item
     {
         //private int id;
         //private Bitmap skin;
@@ -25,6 +25,11 @@ namespace TheBestGame
         {
             name = _name;
             defense = _defense;
+        }
+        public Armor(Armor _armor)
+        {
+            name = _armor.Name;
+            defense = _armor.Defense;
         }
         public string Name
         {
@@ -45,22 +50,23 @@ namespace TheBestGame
         }
     }
 
-    class Helmet : Armor
+    public class Helmet : Armor
     {
         public Helmet() : base(){}
         public Helmet(string _name, int _defense) : base(_name, _defense) { }
-
-
+        public Helmet(Helmet _helmet) : base(_helmet) { }
     }
-    class Torso : Armor
+    public class Torso : Armor
     {
         public Torso() : base() { }
         public Torso(string _name, int _defense) : base(_name, _defense) { }
+        public Torso(Torso _torso) : base(_torso) { }
 
     }
-    class Leggings : Armor
+    public class Leggings : Armor
     {
         public Leggings() : base() { }
         public Leggings(string _name, int _defense) : base(_name, _defense) { }
+        public Leggings(Leggings _leggings): base(_leggings) { }
     }
 }

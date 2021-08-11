@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheBestGame
 {
-    class Shield : Item
+    public class Shield : Item
     {
         private string name;
 
@@ -18,6 +18,11 @@ namespace TheBestGame
         public Shield(string _name)
         {
             name = _name;
+        }
+
+        public Shield(Shield _shield)
+        {
+            name = _shield.Name;
         }
         public string Name
         {

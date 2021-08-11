@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TheBestGame
 {
-    class Damage
+    public class Damage
     {
         private int result_damage;
         private bool crit;
@@ -26,7 +26,7 @@ namespace TheBestGame
         }
     }
 
-    class Weapon : Item
+    public class Weapon : Item
     {
         private int id;
         private Bitmap skin;
@@ -46,6 +46,7 @@ namespace TheBestGame
             min_damage = 10;
             max_damage = 20;
             crit_damage_chance = 20;
+            price = 111;
         }
         public Weapon(int _id,
                       string _name,
@@ -58,6 +59,16 @@ namespace TheBestGame
             min_damage = _min_damage;
             max_damage = _max_damage;
             crit_damage_chance = _crit_damage_chance;
+        }
+
+        public Weapon(Weapon _weapon)
+        {
+            id = _weapon.Id;
+            name = _weapon.Name;
+            min_damage = _weapon.MinDamage;
+            max_damage = _weapon.MaxDamage;
+            crit_damage_chance = _weapon.CritChance;
+            crit_damage_multiplier = _weapon.CritMultiplier;
         }
 
         public int Id

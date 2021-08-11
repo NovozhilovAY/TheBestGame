@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheBestGame
 {
-    class Сharacter
+    public class Character
     {
         private int level;
         private int health_points;
@@ -17,7 +17,7 @@ namespace TheBestGame
         private Shield shield;
         private int defense;
 
-        public Сharacter()
+        public Character()
         {
             level = 1;
             health_points = 100;
@@ -29,7 +29,7 @@ namespace TheBestGame
             CalculateDefense();
         }
 
-        public Сharacter(int _level,
+        public Character(int _level,
 
                          int _health_points,
                          Weapon _weapon,
@@ -49,6 +49,17 @@ namespace TheBestGame
             shield = _shield;
 
             CalculateDefense();
+        }
+
+        public Character(Character _character)
+        {
+            level = _character.Level;
+            health_points = _character.HealthPoints;
+            weapon = new Weapon(_character.Weapon);
+            helmet = new Helmet(_character.Helment);
+            torso = new Torso(_character.Torso);
+            leggings = new Leggings(_character.Leggings);
+            shield = new Shield(_character.Shield);
         }
 
         public int Level

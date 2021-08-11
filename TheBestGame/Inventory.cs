@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TheBestGame
 {
-    class Inventory
+    public class Inventory
     {
         List<Item> items;
 
