@@ -63,6 +63,27 @@ namespace TheBestGame
             defense = _character.Defense;
         }
 
+        public Damage Attack()
+        {
+            return weapon.GetDamage();
+        }
+
+        public void TakeDamage(Damage damage)
+        {
+            int dmg = damage.Result_damage;
+            int result_damage = dmg - defense;
+            if(result_damage <= 0)
+            {
+                return;
+            }
+            if(health_points - result_damage <= 0)
+            {
+                health_points = 0;
+                return;
+            }
+            health_points -= result_damage;
+        }
+
         public int Level
         {
             get { return level; }
