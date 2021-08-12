@@ -12,15 +12,17 @@ namespace TheBestGame
 {
     public partial class Form1 : Form
     {
-        private Player player;
+        private Player player1;
+        private Player player2;
         public Form1()
         {
             InitializeComponent();
-            InitializePlayer();
+            InitializePlayer1();
+            InitializePlayer2();
             InitializeGUI();
         }
 
-        private void InitializePlayer()
+        private void InitializePlayer1()
         {
             Weapon weapon = new Weapon(1, "King sword", 30, 40, 15);
             Helmet helmet = new Helmet("King helmet", 15);
@@ -28,7 +30,17 @@ namespace TheBestGame
             Leggings leggings = new Leggings("King boots", 10);
             Shield shield = new Shield("King shield");
             Character character = new Character(1, 200, weapon, helmet, torso, leggings, shield);
-            player = new Player("test", "test", "BossOfThisKingdom", character, new Inventory(), 1000, 0, 10, 10);
+            player1 = new Player("test", "test", "BossOfThisKingdom", character, new Inventory(), 1000, 0, 10, 10);
+        }
+        private void InitializePlayer2()
+        {
+            Weapon weapon = new Weapon(1, "Slave sword", 30, 90, 15);
+            Helmet helmet = new Helmet("Slave helmet", 10);
+            Torso torso = new Torso("Slave cuirass", 15);
+            Leggings leggings = new Leggings("Slave boots", 10);
+            Shield shield = new Shield("Slave shield");
+            Character character = new Character(1, 600, weapon, helmet, torso, leggings, shield);
+            player2 = new Player("test", "test", "Bot", character, new Inventory(), 1000, 0, 10, 10);
         }
 
 
@@ -46,16 +58,16 @@ namespace TheBestGame
         //}
         private void InitializeGUI()
         {
-            InitializeWeaponPanel(player.Character.Weapon);
-            InitializeArmorPanel(player.Character.Helment, HelmetNameLabel, HelmetDefenseLabel);
-            InitializeArmorPanel(player.Character.Torso, TorsoNameLabel, TorsoDefenceLabel);
-            InitializeArmorPanel(player.Character.Leggings, LeggingsNameLabel, LeggingsDefenseLabel);
-            InitializeShieldPanel(player.Character.Shield);
-            NicknameLabel.Text = player.Name;
-            LevelLabel.Text = "Уровень: " + player.Character.Level.ToString();
-            GoldLabel.Text = "Золото: " + player.Gold;
-            DonateGoldLabel.Text = "Изумруды: " + player.Donate_gold;
-            HPLabel.Text = "HP " + player.Character.HealthPoints.ToString() + " / " + player.Character.HealthPoints.ToString();
+            InitializeWeaponPanel(player1.Character.Weapon);
+            InitializeArmorPanel(player1.Character.Helment, HelmetNameLabel, HelmetDefenseLabel);
+            InitializeArmorPanel(player1.Character.Torso, TorsoNameLabel, TorsoDefenceLabel);
+            InitializeArmorPanel(player1.Character.Leggings, LeggingsNameLabel, LeggingsDefenseLabel);
+            InitializeShieldPanel(player1.Character.Shield);
+            NicknameLabel.Text = player1.Name;
+            LevelLabel.Text = "Уровень: " + player1.Character.Level.ToString();
+            GoldLabel.Text = "Золото: " + player1.Gold;
+            DonateGoldLabel.Text = "Изумруды: " + player1.Donate_gold;
+            HPLabel.Text = "HP " + player1.Character.HealthPoints.ToString() + " / " + player1.Character.HealthPoints.ToString();
             XPLabel.Text = "XP 0 / 1000!!!";
         }
 
@@ -80,7 +92,7 @@ namespace TheBestGame
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            FightForm fightForm = new FightForm(player, player);
+            FightForm fightForm = new FightForm(player1, player2);
             fightForm.Show();
         }
     }
