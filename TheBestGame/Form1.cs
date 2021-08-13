@@ -35,9 +35,9 @@ namespace TheBestGame
         private void InitializePlayer2()
         {
             Weapon weapon = new Weapon(1, "Slave sword", 30, 90, 15);
-            Helmet helmet = new Helmet("Slave helmet", 10);
-            Torso torso = new Torso("Slave cuirass", 15);
-            Leggings leggings = new Leggings("Slave boots", 10);
+            Helmet helmet = new Helmet("Slave helmet", 5);
+            Torso torso = new Torso("Slave cuirass", 5);
+            Leggings leggings = new Leggings("Slave boots", 5);
             Shield shield = new Shield("Slave shield");
             Character character = new Character(1, 600, weapon, helmet, torso, leggings, shield);
             player2 = new Player("test", "test", "Bot", character, new Inventory(), 1000, 0, 10, 10);
