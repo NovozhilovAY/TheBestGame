@@ -27,6 +27,9 @@ namespace TheBestGame
         int player2_max_hp;
 
         Random rnd = new Random();
+
+        health_bar.HealthBar healthBar1;
+        health_bar.HealthBar healthBar2;
         public FightForm(Player _player1, Player _player2)
         {
             InitializeComponent();
@@ -44,8 +47,10 @@ namespace TheBestGame
             Player1NameLabel.Text = player1.Name;
             Player2NameLabel.Text = player2.Name;
 
-            Player1HPLabel.Text = "XP " + fighter1.HealthPoints + " / " + player1_max_hp;
-            Player2HPLabel.Text = "XP " + fighter2.HealthPoints + " / " + player2_max_hp;
+            healthBar1 = new health_bar.HealthBar(healthPictureBox1,player1_max_hp);
+            healthBar2 = new health_bar.HealthBar(healthPictureBox2, player2_max_hp);
+            //Player1HPLabel.Text = "XP " + fighter1.HealthPoints + " / " + player1_max_hp;
+            //Player2HPLabel.Text = "XP " + fighter2.HealthPoints + " / " + player2_max_hp;
 
             Player1DamageLabel.Text = "Урон " + fighter1.Weapon.MinDamage + " - " + fighter1.Weapon.MaxDamage;
             Player2DamageLabel.Text = "Урон " + fighter2.Weapon.MinDamage + " - " + fighter2.Weapon.MaxDamage;
@@ -62,8 +67,8 @@ namespace TheBestGame
 
         public void UpdateHP()
         {
-            Player1HPLabel.Text = "XP " + fighter1.HealthPoints + " / " + player1_max_hp;
-            Player2HPLabel.Text = "XP " + fighter2.HealthPoints + " / " + player2_max_hp;
+            //Player1HPLabel.Text = "XP " + fighter1.HealthPoints + " / " + player1_max_hp;
+            //Player2HPLabel.Text = "XP " + fighter2.HealthPoints + " / " + player2_max_hp;
         }
 
         private void DefenseHeadRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -119,6 +124,7 @@ namespace TheBestGame
                     FightLogTextBox.Text += "Урон от удара = (урон)" + player1_damage.Result_damage + " - (защита)" + fighter2.Defense + " = " + (player1_damage.Result_damage - fighter2.Defense) + "\r\n";
                     FightLogTextBox.Text += player2.Name + " HP = " + fighter2.HealthPoints + " - " + (player1_damage.Result_damage - fighter2.Defense) + " = " + (fighter2.HealthPoints - (player1_damage.Result_damage - fighter2.Defense)) + "\r\n\r\n";
                     fighter2.TakeDamage(player1_damage);
+                    healthBar2.ReduceValue(player1_damage.Result_damage - fighter2.Defense);
                     UpdateHP();
                 }
             }
@@ -139,6 +145,7 @@ namespace TheBestGame
                     FightLogTextBox.Text += "Урон от удара = (урон)" + player2_damage.Result_damage + " - (защита)" + fighter1.Defense + " = " + (player2_damage.Result_damage - fighter1.Defense) + "\r\n";
                     FightLogTextBox.Text += player1.Name + " HP = " + fighter1.HealthPoints + " - " + (player2_damage.Result_damage - fighter1.Defense) + " = " + (fighter1.HealthPoints - (player2_damage.Result_damage - fighter1.Defense)) + "\r\n";
                     fighter1.TakeDamage(player2_damage);
+                    healthBar1.ReduceValue(player2_damage.Result_damage - fighter1.Defense);
                     UpdateHP();
                 }
             }

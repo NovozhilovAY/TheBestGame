@@ -34,8 +34,8 @@ namespace TheBestGame
             this.WeaponDamageLabel = new System.Windows.Forms.Label();
             this.WeaponNameLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TorsoNameLabel = new System.Windows.Forms.Label();
             this.TorsoDefenceLabel = new System.Windows.Forms.Label();
+            this.TorsoNameLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.HelmetDefenseLabel = new System.Windows.Forms.Label();
             this.HelmetNameLabel = new System.Windows.Forms.Label();
@@ -54,11 +54,13 @@ namespace TheBestGame
             this.DonateGoldLabel = new System.Windows.Forms.Label();
             this.HPLabel = new System.Windows.Forms.Label();
             this.XPLabel = new System.Windows.Forms.Label();
+            this.HealthpictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HealthpictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // WeaponMultLabel
@@ -112,16 +114,6 @@ namespace TheBestGame
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Нагрудник";
             // 
-            // TorsoNameLabel
-            // 
-            this.TorsoNameLabel.AutoSize = true;
-            this.TorsoNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TorsoNameLabel.Location = new System.Drawing.Point(7, 20);
-            this.TorsoNameLabel.Name = "TorsoNameLabel";
-            this.TorsoNameLabel.Size = new System.Drawing.Size(46, 17);
-            this.TorsoNameLabel.TabIndex = 0;
-            this.TorsoNameLabel.Text = "label1";
-            // 
             // TorsoDefenceLabel
             // 
             this.TorsoDefenceLabel.AutoSize = true;
@@ -131,6 +123,16 @@ namespace TheBestGame
             this.TorsoDefenceLabel.Size = new System.Drawing.Size(46, 17);
             this.TorsoDefenceLabel.TabIndex = 1;
             this.TorsoDefenceLabel.Text = "label2";
+            // 
+            // TorsoNameLabel
+            // 
+            this.TorsoNameLabel.AutoSize = true;
+            this.TorsoNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TorsoNameLabel.Location = new System.Drawing.Point(7, 20);
+            this.TorsoNameLabel.Name = "TorsoNameLabel";
+            this.TorsoNameLabel.Size = new System.Drawing.Size(46, 17);
+            this.TorsoNameLabel.TabIndex = 0;
+            this.TorsoNameLabel.Text = "label1";
             // 
             // groupBox2
             // 
@@ -299,11 +301,11 @@ namespace TheBestGame
             // 
             this.HPLabel.AutoSize = true;
             this.HPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.HPLabel.Location = new System.Drawing.Point(333, 380);
+            this.HPLabel.Location = new System.Drawing.Point(218, 366);
             this.HPLabel.Name = "HPLabel";
-            this.HPLabel.Size = new System.Drawing.Size(60, 24);
+            this.HPLabel.Size = new System.Drawing.Size(36, 24);
             this.HPLabel.TabIndex = 15;
-            this.HPLabel.Text = "label1";
+            this.HPLabel.Text = "HP";
             // 
             // XPLabel
             // 
@@ -315,11 +317,20 @@ namespace TheBestGame
             this.XPLabel.TabIndex = 16;
             this.XPLabel.Text = "label1";
             // 
+            // HealthpictureBox
+            // 
+            this.HealthpictureBox.Location = new System.Drawing.Point(260, 361);
+            this.HealthpictureBox.Name = "HealthpictureBox";
+            this.HealthpictureBox.Size = new System.Drawing.Size(274, 35);
+            this.HealthpictureBox.TabIndex = 17;
+            this.HealthpictureBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.HealthpictureBox);
             this.Controls.Add(this.XPLabel);
             this.Controls.Add(this.HPLabel);
             this.Controls.Add(this.DonateGoldLabel);
@@ -346,6 +357,7 @@ namespace TheBestGame
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HealthpictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,6 +389,7 @@ namespace TheBestGame
         private System.Windows.Forms.Label DonateGoldLabel;
         private System.Windows.Forms.Label HPLabel;
         private System.Windows.Forms.Label XPLabel;
+        private System.Windows.Forms.PictureBox HealthpictureBox;
     }
 }
 

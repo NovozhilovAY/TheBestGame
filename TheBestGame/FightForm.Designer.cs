@@ -51,12 +51,14 @@ namespace TheBestGame
             this.Player2DefenseLabel = new System.Windows.Forms.Label();
             this.Player1NameLabel = new System.Windows.Forms.Label();
             this.Player2NameLabel = new System.Windows.Forms.Label();
-            this.Player1HPLabel = new System.Windows.Forms.Label();
-            this.Player2HPLabel = new System.Windows.Forms.Label();
+            this.healthPictureBox1 = new System.Windows.Forms.PictureBox();
+            this.healthPictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.healthPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -279,39 +281,35 @@ namespace TheBestGame
             // 
             this.Player2NameLabel.AutoSize = true;
             this.Player2NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Player2NameLabel.Location = new System.Drawing.Point(553, 13);
+            this.Player2NameLabel.Location = new System.Drawing.Point(534, 13);
             this.Player2NameLabel.Name = "Player2NameLabel";
             this.Player2NameLabel.Size = new System.Drawing.Size(60, 24);
             this.Player2NameLabel.TabIndex = 9;
             this.Player2NameLabel.Text = "label1";
             // 
-            // Player1HPLabel
+            // healthPictureBox1
             // 
-            this.Player1HPLabel.AutoSize = true;
-            this.Player1HPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Player1HPLabel.Location = new System.Drawing.Point(13, 46);
-            this.Player1HPLabel.Name = "Player1HPLabel";
-            this.Player1HPLabel.Size = new System.Drawing.Size(60, 24);
-            this.Player1HPLabel.TabIndex = 10;
-            this.Player1HPLabel.Text = "label1";
+            this.healthPictureBox1.Location = new System.Drawing.Point(17, 41);
+            this.healthPictureBox1.Name = "healthPictureBox1";
+            this.healthPictureBox1.Size = new System.Drawing.Size(253, 28);
+            this.healthPictureBox1.TabIndex = 10;
+            this.healthPictureBox1.TabStop = false;
             // 
-            // Player2HPLabel
+            // healthPictureBox2
             // 
-            this.Player2HPLabel.AutoSize = true;
-            this.Player2HPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Player2HPLabel.Location = new System.Drawing.Point(553, 46);
-            this.Player2HPLabel.Name = "Player2HPLabel";
-            this.Player2HPLabel.Size = new System.Drawing.Size(60, 24);
-            this.Player2HPLabel.TabIndex = 11;
-            this.Player2HPLabel.Text = "label2";
+            this.healthPictureBox2.Location = new System.Drawing.Point(538, 41);
+            this.healthPictureBox2.Name = "healthPictureBox2";
+            this.healthPictureBox2.Size = new System.Drawing.Size(253, 28);
+            this.healthPictureBox2.TabIndex = 11;
+            this.healthPictureBox2.TabStop = false;
             // 
             // FightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Player2HPLabel);
-            this.Controls.Add(this.Player1HPLabel);
+            this.Controls.Add(this.healthPictureBox2);
+            this.Controls.Add(this.healthPictureBox1);
             this.Controls.Add(this.Player2NameLabel);
             this.Controls.Add(this.Player1NameLabel);
             this.Controls.Add(this.panel2);
@@ -330,6 +328,8 @@ namespace TheBestGame
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.healthPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,7 +359,7 @@ namespace TheBestGame
         private System.Windows.Forms.Label Player2DefenseLabel;
         private System.Windows.Forms.Label Player1NameLabel;
         private System.Windows.Forms.Label Player2NameLabel;
-        private System.Windows.Forms.Label Player1HPLabel;
-        private System.Windows.Forms.Label Player2HPLabel;
+        private System.Windows.Forms.PictureBox healthPictureBox1;
+        private System.Windows.Forms.PictureBox healthPictureBox2;
     }
 }

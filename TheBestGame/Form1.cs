@@ -67,8 +67,8 @@ namespace TheBestGame
             LevelLabel.Text = "Уровень: " + player1.Character.Level.ToString();
             GoldLabel.Text = "Золото: " + player1.Gold;
             DonateGoldLabel.Text = "Изумруды: " + player1.Donate_gold;
-            HPLabel.Text = "HP " + player1.Character.HealthPoints.ToString() + " / " + player1.Character.HealthPoints.ToString();
             XPLabel.Text = "XP 0 / 1000!!!";
+            health_bar.HealthBar healthBar = new health_bar.HealthBar(HealthpictureBox, player1.Character.HealthPoints);
         }
 
         private void InitializeWeaponPanel(Weapon weapon)
